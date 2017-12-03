@@ -1,0 +1,65 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+        <div>
+          <h3>REALIZAR GIROS</h3>
+
+              <input type="text" class="" placeholder="CedulaEmisor"
+              ng-model="vm.docuEmisor" >
+              <button type="button"  class="btn btn-success" ng-click="vm.searchEmisor()"
+              name="button">Buscar</button>
+
+          </div>
+
+          <div class="well">
+            <small>Nombre emisor</small>
+            <p>{{vm.clienteEmisor.nombres}}</p>
+            <small>Apellidos emisor</small>
+            <p>{{vm.clienteEmisor.apellidos}}</p>
+          </div>
+
+          <div class="">
+            <input type="text" placeholder="CedulaEmisor" ng-model="vm.docuReceptor" >
+            <button type="button" class="btn btn-success" ng-click="vm.searchReceptor()" name="button">Buscar</button>
+          </div>
+
+          <div class="well">
+              <small>Nombre Receptor</small>
+              <p>{{vm.clienteReceptor.nombres}}</p>
+                <small>Apellidos Receptor</small>
+              <p>{{vm.clienteReceptor.apellidos}}</p>
+          </div>
+
+      <form class="" ng-submit="vm.createGiro()">
+
+	    <ul>
+        <div class="form-group">
+        <select class="form-control" name="" ng-model="vm.giro.idCiudadEmisor.id">
+          <option value="">Ciudad Emisora</option>
+          <option ng-value = "item.id" ng-repeat="item in vm.ciuEmisor"> {{item.ciudad}} </option>
+        </select>
+        </div>
+        <div class="form-group">
+        <select class="form-control" name="" ng-model="vm.giro.idCiudadReceptor.id">
+          <option value="">Ciudad Receptor</option>
+          <option ng-value = "item.id" ng-repeat="item in vm.ciuReceptor"> {{item.ciudad}} </option>
+        </select>
+      </div>
+          <!-- <input type="text" placeholder="cantidad" ng-model="vm.giro.monto" name="" value="">
+        <button class="btn btn-info" type="submit" name="button">enviar giro</button> -->
+        <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+        <span class="input-group-addon">cantidad</span>
+        <input type="text"  ng-model="vm.giro.monto" class="form-control">
+      </div>
+      </div>
+      <button class="btn btn-info" type="submit" name="button">enviar giro</button>
+	    </ul>
+
+      </form>
+
+    </div>
+  </div>
+</section>
